@@ -21,4 +21,7 @@ print("__Example 2__")
 def f1(arg1, *args):
     print('Normal Argument: ', arg1)
     print(args)
+print("--test case 1--")
 f1(10,20,30,40,50,60,70)
+print("--test case 2--")
+f1((10,20),30,40,50,60,70)
