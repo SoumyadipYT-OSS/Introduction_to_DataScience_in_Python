@@ -15,7 +15,7 @@ def main():
     eg_v1 = [1,2,3]
     eg_v2 = [4,5,6]
     
-    add_vectors(eg_v1, eg_v2)
+    print(add_vectors(eg_v1, eg_v2))
 
 
 if __name__=="__main__":
