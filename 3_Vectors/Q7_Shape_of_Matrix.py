@@ -24,7 +24,11 @@ def main():
             [2, 8, 3], 
             [9, 3, 5] 
         ]
-    print(displayMatrix(eg1))
+    output = displayMatrix(eg1)
+    for i in output:
+        print(i)
+        
+    print()
     displayShapeMatrix(eg1)
 
 
