@@ -29,12 +29,12 @@ def variance(lst):
 
 
 
-import math
-
-def standard_deviation(lst):
-    return math.sqrt(variance(lst))
-
-
 def co_variance(x, y):
     assert len(x) == len(y)
     return dot(de_mean(x), de_mean(y)) / (len(x) - 1)
+
+c = co_variance([10,20,30,40,50],[2,4,6,8,11])
+print(c)
+
+from matplotlib import pyplot as plt
+plt.plot([10,20,30,40,50],[2,4,6,8,11],marker='o')
