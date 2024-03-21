@@ -12,7 +12,7 @@ def identity_matrix(n):
 
 
 def main():
-    n = 3
+    n = 5
     matrix = identity_matrix(n)
     for row in matrix:
         print(row)
