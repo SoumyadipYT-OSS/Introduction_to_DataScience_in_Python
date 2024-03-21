@@ -46,6 +46,7 @@ def correlation(x, y):
     else:
         return 0
     
+    
 c = correlation([10,20,30,40,50], [11,8,6,4,2])
 print(c)
 
