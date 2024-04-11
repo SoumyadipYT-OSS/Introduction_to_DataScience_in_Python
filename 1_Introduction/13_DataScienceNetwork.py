@@ -36,3 +36,14 @@ avg_connections = total_connections / len(users)
 
 no_friends_by_id = [ (user["id"], no_of_friends(user)) for user in users]
 no_friends_by_id.sort(key=lambda id_and_friends: id_and_friends[1], reverse=True)
+
+
+
+# code to iterate over their friends and collect the friends' friends.
+def foaf_ids_bad(user):
+    """ "foaf is short for "friend of a friend" """
+    return [
+            foaf_id 
+            for friend_id in friendships[user["id"]]
+            for foaf_id in friendships[friend_id]
+        ]
