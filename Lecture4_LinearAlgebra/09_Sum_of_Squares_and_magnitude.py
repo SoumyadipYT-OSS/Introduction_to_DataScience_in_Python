@@ -15,3 +15,11 @@ def sum_of_squares(v: Vector) -> float:
 import math
 def magnitude(v: Vector) -> float:
     return math.sqrt(sum_of_squares(v))
+
+
+
+firstVector = [1, 2, 3]
+secondVector = [4, 5, 6]
+
+print(sum_of_squares(firstVector))
+print(magnitude(secondVector))
