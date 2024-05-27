@@ -1,7 +1,5 @@
 from typing import List, Tuple, Callable
 Matrix = List[List[float]]
-
-
 Vector = List[float]
 
 
@@ -18,4 +16,5 @@ def make_matrix(num_rows: int, num_cols: int,
              for i in range(num_rows)]
 
 
-# Here entry_fn is a function for generating its elements
+def identity_Matrix(n: int) -> Matrix:
+    return make_matrix(n, n, lambda i, j: 1 if i == j else 0)
