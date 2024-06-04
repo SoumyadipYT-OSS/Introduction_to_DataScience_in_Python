@@ -11,7 +11,7 @@ def Normal_Approximation_to_Binomial(n: int, p: float) -> Tuple[float, float]:
 
 from scratch.probability import normal_cdf
 
-
+NormalProbabilityBelow = normal_cdf
 def NormalProbabilityAbove(lo: float, µ: float=0, σ:float=1) -> float:
     return normal_cdf(lo, µ, σ)
 
