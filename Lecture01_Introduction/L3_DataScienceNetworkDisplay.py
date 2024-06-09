@@ -19,23 +19,15 @@ friendship_pairs = [
     ]
 
 
-# Initialize the dict with [] for each user id
 friendships = { user["id"]: [] for user in users }
-
-# Loop over the friendship_pairs to populate it.
 for i, j in friendship_pairs:
     friendships[i].append(j)
     friendships[j].append(i)
 
 
-# Simple iteration to see the frienship connections
-print("Friendship_network:")
-for i in friendships:
-    print(i,":", friendships[i])
 
-
-# The frienship network name display
-print("\n _Display names_:")
 for i in friendships:
-    connectionNames = [users[friend_id]["name"] for friend_id in friendships[i]]
-    print(f"{users[i]['name']}: {','.join(connectionNames)}")
+    connections = [users[f_id]["name"] for f_id in friendships[i]]
+    print(f"{users[i]['name']}: {','.join(connections)}")
+    
+    
