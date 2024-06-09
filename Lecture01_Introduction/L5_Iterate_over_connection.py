@@ -22,24 +22,25 @@ friendship_pairs = [
 
 friendships = {user["id"]: [] for user in users}
 
-
 for i, j in friendship_pairs:
     friendships[i].append(j)
     friendships[j].append(i)
+    
+    
+
+# Code to iterate over their friends and collect the data friends' friends.
+def foaf_ids(usr):
+    return [foaf_id for friend_id in friendships[usr["id"]] for foaf_id in friendships[friend_id]]
 
 
 
-def no_of_friends(user):
-    user_id = user["id"]
-    f_id = friendships[user_id]
-    return len(f_id)
+# Code to produce a count mutual friends
+from collections import Counter
+def friends_of_friends(usr):
+    user_id = usr["id"]
+    return Counter(foaf_id
+            for friend_id in friendships[user_id]
+            for foaf_id in friendships[friend_id]
+            if foaf_id != user_id and foaf_id not in friendships[user_id])
 
-
-total_connections = sum(no_of_friends(usr) for usr in users)
-avg_connections = total_connections / len(users)
-
-
-no_friends_by_id = [(u["id"], no_of_friends(u)) for u in users]
-no_friends_by_id.sort(key=lambda f_id: f_id[1], reverse=True)
-
-print(no_friends_by_id)
+print(friends_of_friends(users[3]))
